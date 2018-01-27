@@ -1,0 +1,53 @@
+opt_in_rules:
+  - closure_end_indentation
+  - closure_spacing
+  - empty_count
+  - explicit_init
+  - fatal_error_message
+  - file_length
+  - first_where
+  - force_cast
+  - force_try
+  - force_unwrapping
+  - implicitly_unwrapped_optional
+  - operator_usage_whitespace
+  - overridden_super_call
+  - prohibited_super_call
+  - redundant_nil_coalescing
+  - multiline_parameters
+  - file_header
+  - vertical_parameter_alignment_on_call
+  - joined_default_parameter
+  - unneeded_parentheses_in_closure_argument
+
+excluded:
+  - Pods
+  - ci
+  - fastlane
+  - Hermes/Tangram SDK
+
+function_body_length:
+  warning: 50
+  error: 100
+
+file_header:
+  required_pattern: |
+                    \/\/ Copyright © 2011-Present HERE Global B.V. All rights reserved.
+
+custom_rules:
+  quickspec_class_name:
+    name: "Invalid Test Class Name"
+    regex: "class\\s+(.*)[^Tests]:\\s+QuickSpec"
+    message: "A test class name must end with 'Tests'"
+    severity: error
+  localized_string:
+    excluded: "Hermes/Extensions/String.swift"
+    name: "Localized String"
+    regex: "NSLocalizedString(.*[^,], comment: .*[^)])"
+    message: "Please use .localized instead"
+    severity: warning
+  private_ibaction:
+    name: "Private @IBAction"
+    regex: "@IBAction\\s+func"
+    message: "@IBAction should be private"
+    severity: warning
