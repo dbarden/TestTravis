@@ -141,6 +141,7 @@
 				9EA0925F201D20E500DE4270 /* Resources */,
 				8B9DD50C20994947758BE23E /* [CP] Embed Pods Frameworks */,
 				541D9687C71FE4B68BCA8231 /* [CP] Copy Pods Resources */,
+				9E67DD45201DA83000AEA33E /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -318,6 +319,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TestTravis/Pods-TestTravis-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		9E67DD45201DA83000AEA33E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n${PODS_ROOT}/SwiftLint/swiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
 		};
 		D1473B164FBD9C2AB9378147 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
